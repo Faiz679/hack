@@ -1,0 +1,417 @@
+*,
+html,
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(90deg, #ff0f7bc3 50%, #f89b29c6 100%);
+}
+
+:root {
+    --top-search-height: 40px;
+    --top-line-left: 16px;
+    --sidenav-width: 90px;
+    --sidenav-logo-height: 60px;
+    --grey: rgb(217, 217, 217);
+    --dark-grey: rgb(124, 124, 124);
+    --dark-grey-hover: rgb(109, 87, 87);
+    --dark-grey-bg-hover: linear-gradient(135deg,
+            rgba(159, 159, 159, 1) 0%,
+            rgba(221, 221, 221, 1) 100%);
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topnav {
+    background-color: aliceblue;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: var(--sidenav-logo-height);
+    overflow: auto;
+    z-index: -1;
+}
+
+.top-search {
+    position: fixed;
+    margin: 0.8rem 0 0 calc(var(--sidenav-width) + 2.5rem);
+    width: 720px;
+    height: var(--top-search-height);
+    display: flex;
+    background-color: var(--grey);
+    border-radius: 20px;
+}
+
+.top-user {
+    color: var(--dark-grey);
+    font-weight: bold;
+    padding: var(--top-line-left);
+    margin: 0 var(--top-line-left);
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--top-search-height);
+    text-decoration: none;
+
+    & .caption {
+        font-size: 14px;
+    }
+
+    &:hover {
+        color: var(--dark-grey-hover);
+    }
+}
+
+.top-user:after {
+    content: "";
+    position: relative;
+    bottom: 1;
+    left: var(--top-line-left);
+    height: calc(var(--top-line-left) + 150%);
+    width: 1px;
+    border-right: 1px solid var(--dark-grey);
+}
+
+.top-input-text {
+    height: var(--top-search-height);
+    width: 100%;
+    padding: 4px;
+    background-color: transparent;
+    transition: transform 250ms ease-in-out;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--dark-grey);
+    font-weight: bold;
+    background-image: url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search);
+    background-color: transparent;
+    background-size: 18px 18px;
+    border: none;
+    position: relative;
+
+    &:hover,
+    &:focus {
+        color: var(--dark-grey-hover);
+        outline: 0;
+        border-radius: 20px;
+    }
+}
+
+.top-input-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin: 3px 10px 0 0;
+    color: var(--dark-grey);
+    cursor: pointer;
+
+    &:hover {
+        color: var(--dark-grey-hover);
+    }
+}
+
+.top-right {
+    position: fixed;
+    margin: 0;
+    width: 240px;
+    height: var(--sidenav-logo-height);
+    display: absolute;
+    text-align: center;
+    right: 0;
+    background-color: var(--grey);
+    border-radius: 0 0 0 10px;
+}
+
+.top-right a {
+    position: relative;
+    text-decoration: none;
+    color: var(--dark-grey);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 75%;
+    top: 10%;
+    bottom: 10%;
+    width: 30%;
+    flex-direction: row;
+    border: none;
+}
+
+.top-option .material-icons {
+    font-size: 2.5rem;
+}
+
+.top-right a:hover {
+    cursor: pointer;
+    color: var(--dark-grey-hover);
+
+    &::after {
+        opacity: 1;
+    }
+
+    &::after:hover {
+        opacity: 0;
+    }
+}
+
+.top-right a::after {
+    content: attr(data-top-right-bar);
+    font-family: 'poppins';
+    font-size: 0.8rem;
+    position: absolute;
+    top: 2rem;
+    opacity: 0;
+    color: var(--dark-grey-bg-hover);
+    padding: 0.5rem;
+    border-radius: 0;
+    height: fit-content;
+    font-weight: 400;
+    z-index: 2;
+}
+
+.second-nav {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    top: var(--sidenav-logo-height);
+    height: 60px;
+    border-bottom: 1px solid black;
+    background-color: aliceblue;
+    z-index: -1;
+}
+
+.second-nav-devices {
+    color: var(--dark-grey);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 0 0 calc(var(--sidenav-width) + 2.2rem);
+    position: absolute;
+    top: 55%;
+    width: 10%;
+
+    &:hover {
+        cursor: default;
+    }
+}
+
+.second-nav-add {
+    color: var(--dark-grey);
+    background-color: var(--grey);
+    padding: 1px 3px 1px 8px;
+    border-radius: 20px;
+    font-weight: normal;
+    position: absolute;
+    display: inline-flex;
+    top: 45%;
+    right: 2%;
+    width: fit-content;
+
+    &:hover {
+        color: var(--dark-grey-hover);
+        background: var(--dark-grey-bg-hover);
+        cursor: pointer;
+    }
+}
+
+.second-nav-add i {
+    display: inline;
+}
+
+.create-devices {
+    background-color: var(--grey);
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    z-index: 999;
+}
+
+.create-devices input {
+    display: block;
+    width: 100%;
+    padding: .3rem;
+}
+
+.create-devices .input-group {
+    margin: .5rem 0;
+}
+
+.devices-btn {
+    display: flex;
+    flex-direction: row-reverse;
+    align-self: flex-end;
+    margin-top: 1rem;
+}
+
+.devices-btn-style {
+    font-size: 1.2rem;
+    width: 6rem;
+    height: 3rem;
+    border: 0;
+    border-radius: .4rem;
+    transition: .3s ease-in-out;
+    margin: 0 .2rem;
+
+    &:hover {
+        cursor: pointer;
+        background: var(--dark-grey-bg-hover);
+        color: var(--dark-grey-hover);
+        transition: 5s ease-in-out;
+        border: 0;
+    }
+}
+
+.sidenav {
+    /* Full-height: remove this if you want "auto" height */
+    width: var(--sidenav-width);
+    /* Set the width of the sidebar */
+    position: fixed;
+    /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 0;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: var(--grey);
+    /* Black */
+    padding: 0 0 18rem 0;
+    border-radius: 0 0 25px 0;
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    text-align: center;
+}
+
+.create-devices-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    position: fixed;
+    z-index: 998;
+}
+
+.side-option {
+    text-decoration: none;
+    color: var(--dark-grey);
+    display: block;
+    position: relative;
+    padding: 10px 0;
+}
+
+.side-option:hover {
+    background: var(--dark-grey-bg-hover);
+    cursor: pointer;
+    color: var(--dark-grey-hover);
+}
+
+.side-logo img {
+    padding: 0.3rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: var(--sidenav-logo-height);
+    opacity: 80%;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        opacity: 100%;
+        transform: rotate(-65deg);
+        transition: 0.5s ease-in-out;
+    }
+}
+
+.active {
+    background: var(--dark-grey-bg-hover);
+    color: var(--dark-grey-hover);
+}
+
+.hidden {
+    display: none;
+}
+
+.caption {
+    font-size: 0.7rem;
+}
+
+.sidenav-content {
+    margin: 150px 0 0 calc(var(--sidenav-width) + 2.2rem);
+    display: block;
+    background-color: aqua;
+    position: relative;
+    z-index: -2;
+
+}
+
+.device-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.5rem;
+    list-style-type: square;
+    list-style-position: inside;
+    position: relative;
+    margin: 1rem .2rem;
+    padding: 0 2rem 0 .2rem;
+    width: fit-content;
+
+    &:first-of-type {
+        margin-top: 0;
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        color: var(--dark-grey-hover);
+        background-color: rgb(215, 211, 211);
+        cursor: pointer;
+    }
+}
+
+.device-list span {
+    position: relative;
+    left: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.blur-bg {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    z-index: -2;
+    top: 80px;
+    left: 50px;
+    opacity: 1;
+}
+
+.blur-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    filter: blur(5px);
+    position: relative;
+    background: radial-gradient(circle at center, white, transparent 40%), conic-gradient(from 45deg, #663a6d 52deg, #24425e 65deg, #18665c 120deg 307deg, #345a7f 353deg);
+}
+
+.material-icons {
+    font-variation-settings: "FILL"0, "wght"300, "GRAD"0, "opsz"56;
+    display: block;
+}

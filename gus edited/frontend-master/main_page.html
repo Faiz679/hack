@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Dorami - Nền tảng quản lý bán hàng và kho vận</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" href="main_page.css" />
+  </head>
+  <body>
+    <!-- 1st Line Nav START -->
+    <div class="topnav">
+      <div class="top-search">
+        <a class="top-user" href="#user1">
+          <span class="caption"> <p>User1</p> </span>
+        </a>
+        <input
+          action="#devices"
+          class="top-input-text"
+          type="text"
+          placeholder=""
+        />
+        <i class="top-input-logo material-icons">search</i>
+      </div>
+      <div class="top-right">
+        <a class="top-option top-notifications" href="#notifications" data-top-right-bar="Notifications">
+          <i class="material-icons">notifications</i>
+        </a>
+        <a class="top-option top-settings" href="#settings" data-top-right-bar="Settings">
+          <i class="material-icons">settings</i>
+        </a>
+        <a class="top-option top-profile" href="#profile" data-top-right-bar="Profile">
+          <i class="material-icons">account_circle</i>
+        </a>
+      </div>
+    </div>
+    <!-- 1st Line Nav END -->
+
+    <!-- 2nd Line Nav START -->
+    <div class="second-nav">
+      <span class="second-nav-devices">Devices</span>
+      <div class="second-nav-add flex-center">
+        <span>Add Devices</span>
+        <i class="material-icons">add</i>
+      </div>
+      <div class="create-devices-blur hidden">
+        <div id="create-devices" class="create-devices">
+            <h2>New Device</h2>
+            <h3>Create new device by filling in the form below</h3>
+            <div class="input-group">
+              <label for="template">Template</label>
+              <input id="template" type="text" placeholder="Choose Template" required/>
+            </div>
+            <div class="input-group">
+              <label for="device-name">Device Name</label>
+              <input
+                id="device-name"
+                class="device-name"
+                type="text"
+                placeholder="New Device"
+                required
+              />
+            </div>
+            <div class="devices-btn">
+                <button class="devices-btn-style">Create</button>
+                <button class="devices-btn-style">Cancel</button>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- 2nd Line Nav END -->
+
+    <!-- SIDEBAR NAVIGATION START -->
+    <div class="sidenav">
+      <a class="side-logo" href="/frontend-master/index.html">
+        <span class="caption"> <img src="/frontend-master/assets/Logo_IOT.png" alt="" class="logo-iot" /> </span>
+      </a>
+      <a class="side-option side-devices active" href="#devices">
+        <i class="material-icons">devices</i>
+        <span class="caption"> Devices </span>
+      </a>
+      <a class="side-option side-members" href="#members">
+        <i class="material-icons">groups</i>
+        <span class="caption">Members</span>
+      </a>
+      <a class="side-option side-security" href="#security">
+        <i class="material-icons">security</i>
+        <span class="caption">Security</span>
+      </a>
+    </div>
+    <!-- SIDEBAR NAVIGATION END -->
+
+    <div class="blur-bg"><div class="blur-circle"></div></div>
+    <div class="sidenav-content">
+      <section id="devices" class="">
+        <ul class="devices-list">
+          <li class="device-list"><span>Device Lorem, ipsum. 1</span></li>
+
+          <li class="device-list"><span>Device Lorem. 2</span></li>
+          <li class="device-list"><span>Device 3</span></li>
+        </ul>
+      </section>
+      <section id="members" class="hidden">
+        <div>awf</div>
+      </section>
+      <section id="security" class="hidden">
+        security lorem4000</section>
+    </div>
+    <script src="main_page.js"></script>
+  </body>
+</html>
